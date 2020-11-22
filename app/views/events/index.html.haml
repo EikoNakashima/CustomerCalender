@@ -1,2 +1,17 @@
-
-%li#calendar
+.Header
+  .Header__contents
+    .Header__contents__left
+      =link_to("/",class: "Header__contents__left__btn") do
+        顧客管理
+    .Header__contents__main
+      あなたのスケジュール
+    .Header__contents__right
+      =link_to("/",class: "Hedder__contents__right__btn") do
+        ログアウト
+.Body
+  %p#calendar
+.Footer
+  .Footer__content
+  =link_to("/",class: "Footer__content__btn") do
+    ＋
+    入力
