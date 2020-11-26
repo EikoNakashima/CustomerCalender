@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    Tweet.create(tweet_params)
   end
 
   def destroy
@@ -23,5 +24,8 @@ class EventsController < ApplicationController
   end
 
   private
+  def tweet_params
+    params.require(:tweet).permit(:name, :image, :text)
+  end
   
 end
