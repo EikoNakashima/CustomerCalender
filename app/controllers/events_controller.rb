@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
 
   def index
+    @events = Event.all
   end
 
   def new
-    # @tweet = Tweet.new
+    @event = Event.new
   end
 
   def create
-    Tweet.create(tweet_params)
+    Event.create(tweet_params)
   end
 
   def destroy
@@ -25,7 +26,7 @@ class EventsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:name, :image, :text)
+    params.require(:event).permit(:name, :image, :text)
   end
-  
+
 end
