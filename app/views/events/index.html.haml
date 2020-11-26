@@ -4,10 +4,17 @@
       =link_to("/",class: "Header__contents__left__btn") do
         顧客管理
     .Header__contents__main
-      あなたのスケジュール
+      -if user_signed_in?
+        あなたのスケジュール
     .Header__contents__right
-      =link_to("/",class: "Hedder__contents__right__btn") do
-        ログアウト
+      -if user_signed_in?
+        =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do
+          ログアウト
+      - else
+        =link_to(new_user_session_path,class: "Hedder__contents__right__btn") do
+          ログイン
+        =link_to(new_user_registration_path,class: "Hedder__contents__right__btn") do
+          新規登録
 .Body
   %p#calendar
 .Footer
