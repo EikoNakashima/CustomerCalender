@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
-  
+
   def index
   end
 
   def new
+    # @tweet = Tweet.new
   end
 
   def create
@@ -21,4 +22,6 @@ class EventsController < ApplicationController
   def show
   end
 
+  private
+  
 end
