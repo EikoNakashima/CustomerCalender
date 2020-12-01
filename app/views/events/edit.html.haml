@@ -1,0 +1,27 @@
+- events.each do |event|
+  .modal.fade{:id => "inputScheduleEditForm#{event.id}", :tabindex => "-1"}
+    .modal-dialog.modal-nm
+      .modal-content
+        .modal-header
+          %h4.modal-title スケジュール編集
+        .modal-body
+          .col
+            = form_with(model: event, url: users_event_path(event), method: :put) do |f|
+              %p
+                %span タイトル
+                %span#inputTitle{:value => ""}= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください"
+              %span 開始日時
+              %span
+                = f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field"
+                \~
+              %br/
+              %span 終了日時
+              %span= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field"
+              %span
+                %br/
+                詳細
+                \#{f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください"}
+              .modal-footer
+                = f.hidden_field :user_id, :value => current_user.id
+                = f.submit "編集する", class: "btn btn-primary"
+                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} 閉じる
