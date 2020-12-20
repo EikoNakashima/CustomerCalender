@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../calender.js")
-
+require('jquery') 
 
 // document.getElementById("confirm").addEventListener('click', function()　{
 //   calendar.refetchEvents();
@@ -20,3 +20,4 @@ require("../calender.js")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+

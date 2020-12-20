@@ -1,8 +1,9 @@
 .Contents
   .Container
     %h3 イベント追加
-    = form_with(model: @event, local: true) do |form|
-      = form.text_field :name, placeholder: "タイトル"
-      = form.text_field :image, placeholder: "Image Url"
-      = form.text_area :text, placeholder: "メモ", rows: "5"
-      = form.submit "追加"
+    = form_with(model: @event, local: true) do |f|
+      = f.text_field :title, placeholder: "タイトル"
+      = f.text_area :body, placeholder: "メモ", rows: "5"
+      = f.datetime_select :start
+      = f.datetime_select :end
+      = f.submit "追加"

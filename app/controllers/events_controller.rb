@@ -9,9 +9,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
-    event.save!
-    @events = Event.where(user_id: current_user.id)
+    @event = Event.create(event_params)
+    
+    if  @event.save
+      redirect_to root_path, notice: "イベントを登録しました"
+    else
+      redirect_to new_event_path, notice: "登録出来ませんでした"
+    # @events = Event.where(user_id: current_user.id)
+    end
   end
 
   def destroy
@@ -38,7 +43,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :image, :text)
+    params.require(:event).permit(:title, :body, :start, :end)
   end
 
 end
