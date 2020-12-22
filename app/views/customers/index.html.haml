@@ -1,11 +1,11 @@
 .Header
   .Header__contents
     .Header__contents__left
-      =link_to(customers_path, class: "Header__contents__left__btn") do
-        顧客管理
+      =link_to("/",class: "Header__contents__left__btn") do
+        自分のスケジュール
     .Header__contents__main
       -if user_signed_in?
-        あなたのスケジュール
+        顧客管理画面
     .Header__contents__right
       -if user_signed_in?
         =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do

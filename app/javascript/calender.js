@@ -15,14 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks: true,
     editable: true,
     nowIndicator: true,
-    // navLinkDayClick: function(date, jsEvent) {
-    //   console.log('day', date.toISOString());
-    //   console.log('coords', jsEvent.pageX, jsEvent.pageY);
-    // },
-    
     initialView: 'dayGridMonth',
    
     events: '/events.json',
+    
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 'auto',
@@ -49,17 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
     eventClick: function(event) {
-      // console.log(event);
-      // var title = prompt('予定を更新してください:');
-
-      // if(title && title!=""){
-      //   event.title = title;
-      //   //イベント（予定）の修正
-      //   $('#calendar').fullCalendar('updateEvent', event);
-      // }else{
-      //   //イベント（予定）の削除  idを指定して削除。
-      //   $('#calendar').fullCalendar("removeEvents", event.id);
-      // }
     },
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
@@ -67,18 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
 
-  
-  // let calendar = new Calendar(calendarEl, {
-  //   eventClick: function(info) {
-  //     //カレンダーへのリンクはさせません。
-  //     info.jsEvent.preventDefault();
-  //     showview(info);
-  //   }
-  // });
 
-  // function showview(info) {
-  //   console.log
-  // }
 
   calendar.render();
 

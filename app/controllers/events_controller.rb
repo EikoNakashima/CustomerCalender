@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  
   def index
     @events = Event.all
   end
@@ -20,28 +22,44 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    event = Event.find(params[:id])
-    event.destroy
-    redirect_to user_path(@user)
+    if @event.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      flash.now[:alert] = '商品を削除できませんでした'
+      render :show
+    end
+    # @user = User.find(params[:id])
+    # event = Event.find(params[:id])
+    # event.destroy
+    # redirect_to user_path(@user)
   end
 
   def edit
   end
 
   def update
-    event = Event.find(params[:id])
-    @events = Event.where(user_id: current_user.id)
-    event.update(event_params)
+    if @event.update(event_params)
+      redirect_to root_path, notice: '商品を編集しました'
+    else
+      flash.now[:alert] = '必須事項を入力してください'
+      render :edit
+    end
   end
 
   def show
-    @user = User.find(params[:id])
-    @events = Event.where(user_id: @user.id)
-    @event = Event.new
+    # @user = User.find(params[:id])
+    # @events = Event.where(user_id: @user.id)
+
   end
 
+
+
   private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
   def event_params
     params.require(:event).permit(:title, :body, :start, :end)
   end
