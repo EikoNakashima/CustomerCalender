@@ -13,6 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_12_22_085118) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "allday"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

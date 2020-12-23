@@ -9,7 +9,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  
+
   let calendarEl = document.getElementById('calendar');
   let calendar = new Calendar(calendarEl, {
     navLinks: true,
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     nowIndicator: true,
     initialView: 'dayGridMonth',
    
-    events: '/events.json',
-    
+    // events: '/events.json',
+
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 'auto',
@@ -49,9 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
+    eventSources: [{url:'/events.json',
+    color: 'yellow',
+    className: 'staff-1'},
+    {url:'/customers.json',
+    color: 'red',
+    className: 'staff-2'}
+    ],
+
+
+   
+
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
 
+  // document.getElementById().addEventListener('change',function(){
+      
+  // }
+  // )
+  function change(key) {
+    $('.staff-'+key).toggle();
+    $('.label-link-'+key).toggleClass('off');
+  }
 
 
   calendar.render();
