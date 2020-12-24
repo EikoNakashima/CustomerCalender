@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 });
 
-window.change = () => {
+window.change = (key) => {
   $('.staff-'+key).toggle();
   $('.label-link-'+key).toggleClass('off');
 }
