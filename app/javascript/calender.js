@@ -42,12 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
+
     eventSources: [{url:'/events.json',
     color: '#2ECCFA',
-    className: 'staff-1'},
-    {url:'/customers.json',
-    color: '#B40486',
-    className: 'staff-2'}
+    className: 'staff-1'}
     ],
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
@@ -55,9 +53,5 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 });
 
-window.change = () => {
-  $('.staff-'+key).toggle();
-  $('.label-link-'+key).toggleClass('off');
-}
 
 

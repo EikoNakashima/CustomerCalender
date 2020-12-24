@@ -1,16 +1,5 @@
 .Header
   .Header__contents
-    .Header__contents__left
-    #label
-      %a.label-link-1{:onclick => "return change(1);"}
-        %span{:style => "color:#2ECCFA;"} ■
-        ラベル1
-      %a.label-link-2{ :onclick => "return change(2);"}
-        %span{:style => "color:#B40486;"} ■
-        ラベル2
-      
-      .Header__contents__left__btn
-        %button#setEventCal{:type => "button"} 切り替えボタン  
     .Header__contents__main
       -if user_signed_in?
         あなたのスケジュール
