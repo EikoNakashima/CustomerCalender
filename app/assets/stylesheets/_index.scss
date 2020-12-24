@@ -41,3 +41,14 @@
     }
   }
 }
+
+.label a{
+	display: block;
+}
+.label a.off{
+  display : none;
+}
+
+.a {
+  cursor:pointer;
+}

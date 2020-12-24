@@ -2,18 +2,13 @@
   .Header__contents
     .Header__contents__left
     #label
-      %a.label-link-1{:href => "javascript:void(0);", :onclick => "return change(1);"}
+      %a.label-link-1{:onclick => "return change(1);"}
         %span{:style => "color:#2ECCFA;"} ■
         ラベル1
-      %a.label-link-2{:href => "javascript:void(0);", :onclick => "return change(2);"}
+      %a.label-link-2{ :onclick => "return change(2);"}
         %span{:style => "color:#B40486;"} ■
         ラベル2
-      %a.label-link-3{:href => "javascript:void(0);", :onclick => "return change(3);"}
-        %span{:style => "color:#B45F04;"} ■
-        ラベル3
-
-      -# =link_to(customers_path, class: "Header__contents__left__btn") do
-      -#   顧客管理
+      
       .Header__contents__left__btn
         %button#setEventCal{:type => "button"} 切り替えボタン  
     .Header__contents__main

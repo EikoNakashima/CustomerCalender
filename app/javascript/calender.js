@@ -1,12 +1,8 @@
-
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
-
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -16,9 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     editable: true,
     nowIndicator: true,
     initialView: 'dayGridMonth',
-   
-    // events: '/events.json',
-
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 'auto',
@@ -50,31 +43,21 @@ document.addEventListener('DOMContentLoaded', function() {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
     eventSources: [{url:'/events.json',
-    color: 'yellow',
+    color: '#2ECCFA',
     className: 'staff-1'},
     {url:'/customers.json',
-    color: 'red',
+    color: '#B40486',
     className: 'staff-2'}
     ],
-
-
-   
-
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
-
-  // document.getElementById().addEventListener('change',function(){
-      
-  // }
-  // )
-  function change(key) {
-    $('.staff-'+key).toggle();
-    $('.label-link-'+key).toggleClass('off');
-  }
-
-
-  calendar.render();
-
   
+  calendar.render();
 });
+
+window.change = () => {
+  $('.staff-'+key).toggle();
+  $('.label-link-'+key).toggleClass('off');
+}
+
 
