@@ -44,8 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     eventSources: [{url:'/events.json',
-    color: '#2ECCFA',
-    className: 'staff-1'}
+    color: '#2ECCFA'}
     ],
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });

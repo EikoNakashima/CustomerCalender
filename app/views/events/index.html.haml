@@ -1,5 +1,8 @@
 .Header
   .Header__contents
+    .Header__contents__left
+      =link_to(customers_path,class: "Footer__content__btn") do
+        顧客一覧
     .Header__contents__main
       -if user_signed_in?
         あなたのスケジュール
@@ -16,10 +19,6 @@
   %p#calendar
 .Footer
   .Footer__content
-    .Footer__content__left
-      =link_to(new_customer_path,class: "Footer__content__btn") do
-        ＋
-        顧客情報入力
     .Footer__content__right
       =link_to(new_event_path,class: "Footer__content__btn") do
         ＋

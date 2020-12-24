@@ -1,13 +1,13 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer, only: [ :show, :edit, :update, :destroy]
 
   
   def index
-    @customers = Customer.all
+    @customer = Customer.all
   end
 
   def new
-    @customer = Customer.new
+    # @customer = Customer.new
   end
 
   def create
@@ -47,8 +47,6 @@ class CustomersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-    # @events = Event.where(user_id: @user.id)
 
   end
 
@@ -61,7 +59,7 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:title, :body, :start, :end)
+    params.require(:customer).permit(:name, :current_address, :building_site, :phone, :body, :user_id)
   end
 
 end
