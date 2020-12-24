@@ -7,14 +7,15 @@ class CustomersController < ApplicationController
   end
 
   def new
-    # @customer = Customer.new
+    @customer = Customer.new
+
   end
 
   def create
     @customer = Customer.create(customer_params)
     
     if  @customer.save
-      redirect_to root_path, notice: "イベントを登録しました"
+      redirect_to customers_path, notice: "イベントを登録しました"
     else
       redirect_to new_customer_path, notice: "登録出来ませんでした"
     # @events = Event.where(user_id: current_user.id)
@@ -23,7 +24,7 @@ class CustomersController < ApplicationController
 
   def destroy
     if @customer.destroy
-      redirect_to root_path, notice: '商品を削除しました'
+      redirect_to customers_path, notice: '商品を削除しました'
     else
       flash.now[:alert] = '商品を削除できませんでした'
       render :show
@@ -39,7 +40,7 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to root_path, notice: '商品を編集しました'
+      redirect_to customers_path, notice: '商品を編集しました'
     else
       flash.now[:alert] = '必須事項を入力してください'
       render :edit

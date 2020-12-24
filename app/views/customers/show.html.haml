@@ -1,0 +1,28 @@
+.Show  
+  顧客詳細ページ
+  .Show-heddar
+    .Show-hedder__top
+      = @customer.name
+    .Show-hedder__address
+      = @customer.current_address
+    .Show-hedder__site
+      = @customer.building_site
+    .Show-hedder__phone 
+      = @customer.phone
+    .Show-hedder__body 
+      = @customer.body
+      
+
+
+.Edit_customer_btn
+  %span.Edit_customer_btn__text 編集する
+  = link_to edit_customer_path do
+    = icon 'fas', 'fas fa-cog fa-3x', class: 'Edit_customer_btn__Icon'
+
+.Delete-customer_btn
+  %span.Delete-customer_btn__text 削除する
+  = link_to customer_path,method: :delete do
+    = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-customer_btn__Icon'
+    
+= link_to root_path(current_user), class: "Listing__tpo" do
+  トップページに戻る
