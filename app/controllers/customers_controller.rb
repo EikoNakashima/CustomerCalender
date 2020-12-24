@@ -1,28 +1,28 @@
-class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+class CustomersController < ApplicationController
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   
   def index
-    @events = Event.all
+    @customers = Customer.all
   end
 
   def new
-    @event = Event.new
+    @customer = Customer.new
   end
 
   def create
-    @event = Event.create(event_params)
+    @customer = Customer.create(customer_params)
     
-    if  @event.save
+    if  @customer.save
       redirect_to root_path, notice: "イベントを登録しました"
     else
-      redirect_to new_event_path, notice: "登録出来ませんでした"
+      redirect_to new_customer_path, notice: "登録出来ませんでした"
     # @events = Event.where(user_id: current_user.id)
     end
   end
 
   def destroy
-    if @event.destroy
+    if @customer.destroy
       redirect_to root_path, notice: '商品を削除しました'
     else
       flash.now[:alert] = '商品を削除できませんでした'
@@ -38,7 +38,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @event.update(event_params)
+    if @customer.update(customer_params)
       redirect_to root_path, notice: '商品を編集しました'
     else
       flash.now[:alert] = '必須事項を入力してください'
@@ -56,12 +56,12 @@ class EventsController < ApplicationController
 
   private
 
-  def set_event
-    @event = Event.find(params[:id])
+  def set_customer
+    @customer = Customer.find(params[:id])
   end
 
-  def event_params
-    params.require(:event).permit(:title, :body, :start, :end)
+  def customer_params
+    params.require(:customer).permit(:title, :body, :start, :end)
   end
 
 end

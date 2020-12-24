@@ -1,0 +1,24 @@
+.Show  
+  イベント詳細ページ
+  .Show-heddar
+    .Show-hedder__top
+      = @event.title
+    .Show-hedder__main
+      = @event.body
+    .Show-hedder__start
+      = @event.start
+    .Show-hedder__end  
+      = @event.end
+
+.Edit_Item_Btn
+  %span.Edit_Item_Btn__Text 編集する
+  = link_to edit_event_path do
+    = icon 'fas', 'fas fa-cog fa-3x', class: 'Edit_Item_Btn__Icon'
+
+.Delete-ItemBtn
+  %span.Delete-ItemBtn__text 削除する
+  = link_to event_path,method: :delete do
+    = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-ItemBtn__Icon'
+    
+= link_to root_path(current_user), class: "Listing__tpo" do
+  トップページに戻る

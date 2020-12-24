@@ -1,0 +1,24 @@
+.Header
+  .Header__contents
+    .Header__contents__left
+      =link_to("/",class: "Header__contents__left__btn") do
+        自分のスケジュール
+    .Header__contents__main
+      -if user_signed_in?
+        顧客管理画面
+    .Header__contents__right
+      -if user_signed_in?
+        =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do
+          ログアウト
+      - else
+        =link_to(new_user_session_path,class: "Hedder__contents__right__btn") do
+          ログイン
+        =link_to(new_user_registration_path,class: "Hedder__contents__right__btn") do
+          新規登録
+.Body
+  %p#calendar
+.Footer
+  .Footer__content
+  =link_to(new_event_path,class: "Footer__content__btn") do
+    ＋
+    入力

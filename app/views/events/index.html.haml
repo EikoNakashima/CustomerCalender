@@ -1,17 +1,37 @@
 .Header
   .Header__contents
     .Header__contents__left
-      =link_to("/",class: "Header__contents__left__btn") do
-        顧客管理
+    #label
+      %a.label-link-1{:onclick => "return change(1);"}
+        %span{:style => "color:#2ECCFA;"} ■
+        ラベル1
+      %a.label-link-2{ :onclick => "return change(2);"}
+        %span{:style => "color:#B40486;"} ■
+        ラベル2
+      
+      .Header__contents__left__btn
+        %button#setEventCal{:type => "button"} 切り替えボタン  
     .Header__contents__main
-      あなたのスケジュール
+      -if user_signed_in?
+        あなたのスケジュール
     .Header__contents__right
-      =link_to("/",class: "Hedder__contents__right__btn") do
-        ログアウト
+      -if user_signed_in?
+        =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do
+          ログアウト
+      - else
+        =link_to(new_user_session_path,class: "Hedder__contents__right__btn") do
+          ログイン
+        =link_to(new_user_registration_path,class: "Hedder__contents__right__btn") do
+          新規登録
 .Body
   %p#calendar
 .Footer
   .Footer__content
-  =link_to("/",class: "Footer__content__btn") do
-    ＋
-    入力
+    .Footer__content__left
+      =link_to(new_customer_path,class: "Footer__content__btn") do
+        ＋
+        顧客情報入力
+    .Footer__content__right
+      =link_to(new_event_path,class: "Footer__content__btn") do
+        ＋
+        スケジュール入力
