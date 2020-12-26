@@ -1,37 +1,38 @@
-.Header
-  .Header__contents
-    .Header__contents__left
-    #label
-      %a.label-link-1{:onclick => "return change(1);"}
-        %span{:style => "color:#2ECCFA;"} ■
-        ラベル1
-      %a.label-link-2{ :onclick => "return change(2);"}
-        %span{:style => "color:#B40486;"} ■
-        ラベル2
-      
-      .Header__contents__left__btn
-        %button#setEventCal{:type => "button"} 切り替えボタン  
-    .Header__contents__main
-      -if user_signed_in?
-        あなたのスケジュール
-    .Header__contents__right
-      -if user_signed_in?
-        =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do
-          ログアウト
-      - else
-        =link_to(new_user_session_path,class: "Hedder__contents__right__btn") do
-          ログイン
-        =link_to(new_user_registration_path,class: "Hedder__contents__right__btn") do
-          新規登録
-.Body
-  %p#calendar
-.Footer
-  .Footer__content
-    .Footer__content__left
+.Contents
+  .Contents__side
+    %h1.Contents__side__hedder
+      顧客一覧
+    .Contents__side__body
+      .Customer__main__contents
+        -@customer.each do |customer|
+          .name
+            =link_to customer_path(customer.id),class: "Footer__content__btn" do
+              =customer.id
+              =customer.name  
+    .Contents__side__footer
       =link_to(new_customer_path,class: "Footer__content__btn") do
         ＋
         顧客情報入力
-    .Footer__content__right
-      =link_to(new_event_path,class: "Footer__content__btn") do
-        ＋
-        スケジュール入力
+  .Contents__main
+    .Header
+      .Header__contents
+        .Header__contents__main
+          -if user_signed_in?
+            Schedule
+        .Header__contents__right
+          -if user_signed_in?
+            =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do
+              ログアウト
+          - else
+            =link_to(new_user_session_path,class: "Hedder__contents__right__btn") do
+              ログイン
+            =link_to(new_user_registration_path,class: "Hedder__contents__right__btn") do
+              新規登録
+    .Body
+      %p#calendar
+    .Footer
+      .Footer__content
+        .Footer__content__right
+          =link_to(new_event_path,class: "Footer__content__btn") do
+            ＋
+            スケジュール入力

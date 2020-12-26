@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.datetime :end
       t.integer :allday
       t.integer :user_id
+      t.integer :customer_id
       t.timestamps
     end
   end

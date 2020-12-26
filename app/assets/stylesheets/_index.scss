@@ -1,5 +1,16 @@
+.Contents {
+  display: flex;
+  &__side {
+    width: 20%;
+  }
+  &__main {
+    width: 80%;
+  }
+}
+
+
 .Header {
-  height: 50px;
+  height: 60px;
   &__contents{
     display: flex;
     justify-content: space-between;
@@ -42,13 +53,3 @@
   }
 }
 
-.label a{
-	display: block;
-}
-.label a.off{
-  display : none;
-}
-
-.a {
-  cursor:pointer;
-}
