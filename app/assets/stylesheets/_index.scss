@@ -1,3 +1,14 @@
+.Contents {
+  display: flex;
+  &__side {
+    width: 20%;
+  }
+  &__main {
+    width: 80%;
+  }
+}
+
+
 .Header {
   height: 60px;
   &__contents{
