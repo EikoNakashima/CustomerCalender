@@ -6,5 +6,6 @@
       = f.text_area :body, placeholder: "メモ", rows: "5"
       = f.datetime_select :start
       = f.datetime_select :end
+      = f.collection_check_boxes :customer_ids, Customer.all, :id, :name
       = f.text_field :customer_id, placeholder: "顧客id"
       = f.submit "追加"

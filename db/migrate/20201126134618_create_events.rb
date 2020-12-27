@@ -5,9 +5,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :body
       t.datetime :start
       t.datetime :end
-      t.integer :allday
-      t.integer :user_id
-      t.integer :customer_id
+      t.references :user,foreign_key: true
       t.timestamps
     end
   end

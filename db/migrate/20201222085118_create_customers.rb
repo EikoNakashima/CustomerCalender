@@ -6,7 +6,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.string :building_site
       t.string :phone
       t.text :body
-      t.integer :user_id
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end

@@ -12,8 +12,9 @@
     .Show-hedder__body 
       = @customer.body
     .Show_hedder__event
-      -# = @event.title
-      -# = @event.body
+      - @customer.customer_events.each do |customer|
+        = customer.event.start
+        = customer.event.title
 
 
 .Edit_customer_btn

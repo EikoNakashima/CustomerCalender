@@ -48,7 +48,6 @@ class CustomersController < ApplicationController
   end
 
   def show
-
   end
 
 
@@ -58,6 +57,7 @@ class CustomersController < ApplicationController
   def set_customer
     @customer = Customer.find(params[:id])
   end
+
 
   def customer_params
     params.require(:customer).permit(:name, :current_address, :building_site, :phone, :body, :user_id)
