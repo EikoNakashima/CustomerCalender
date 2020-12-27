@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+ 
 
   
   def index
@@ -62,7 +63,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :body, :start, :end, :user)
+    params.require(:event).permit(:title, :body, :start, :end, :user, customer_ids:[])
   end
 
 end
