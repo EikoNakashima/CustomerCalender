@@ -5,10 +5,12 @@
     .Contents__side__body
       .Customer__main__contents
         -@customer.each do |customer|
-          .name
-            =link_to customer_path(customer.id),class: "Footer__content__btn" do
-              =customer.id
-              =customer.name  
+          -if user_signed_in?
+            -if current_user.id == customer.user_id
+              .name
+                =link_to customer_path(customer.id),class: "Footer__content__btn" do
+                  =customer.id
+                  =customer.name  
     .Contents__side__footer
       =link_to(new_customer_path,class: "Footer__content__btn") do
         ＋
