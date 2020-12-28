@@ -25,9 +25,9 @@ class EventsController < ApplicationController
 
   def destroy
     if @event.destroy
-      redirect_to root_path, notice: '商品を削除しました'
+      redirect_to root_path, notice: 'イベントを削除しました'
     else
-      flash.now[:alert] = '商品を削除できませんでした'
+      flash.now[:alert] = 'イベントを削除できませんでした'
       render :show
     end
   end
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to root_path, notice: '商品を編集しました'
+      redirect_to root_path, notice: 'イベントを編集しました'
     else
       flash.now[:alert] = '必須事項を入力してください'
       render :edit
