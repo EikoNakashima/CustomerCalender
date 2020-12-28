@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index,except:[:index]
  
 
   
@@ -19,7 +20,6 @@ class EventsController < ApplicationController
       redirect_to root_path, notice: "イベントを登録しました"
     else
       redirect_to new_event_path, notice: "登録出来ませんでした"
-    # @events = Event.where(user_id: current_user.id)
     end
   end
 
@@ -30,10 +30,6 @@ class EventsController < ApplicationController
       flash.now[:alert] = '商品を削除できませんでした'
       render :show
     end
-    # @user = User.find(params[:id])
-    # event = Event.find(params[:id])
-    # event.destroy
-    # redirect_to user_path(@user)
   end
 
   def edit
@@ -49,9 +45,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-    # @events = Event.where(user_id: @user.id)
-
   end
 
 
@@ -63,7 +56,13 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :body, :start, :end, :user, customer_ids:[])
+    params.require(:event).permit(:title, :body, :start, :end, :user, customer_ids:[]).merge(user_id: current_user.id)
   end
 
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+  
 end
