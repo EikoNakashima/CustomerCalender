@@ -17,7 +17,7 @@
 
 .Delete-ItemBtn
   %span.Delete-ItemBtn__text 削除する
-  = link_to event_path,method: :delete do
+  = link_to event_path,method: :delete,data: {confirm: '本当に削除しますか？'} do
     = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-ItemBtn__Icon'
     
 = link_to root_path(current_user), class: "Listing__tpo" do
