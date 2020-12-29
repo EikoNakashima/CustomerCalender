@@ -1,40 +1,39 @@
-.Contents
-  .Contents__side
-    %h1.Contents__side__hedder
-      顧客一覧
-    .Contents__side__body
-      .Customer__main__contents
-        -@customer.each do |customer|
+.Customer-contents
+  -if user_signed_in?
+    .Side
+      .Side__header
+        顧客一覧
+      .Side__body
+        .Side__body__customer
+          -@customer.each do |customer|
+            -if user_signed_in?
+              -if current_user.id == customer.user_id
+                .Customer-name
+                  =link_to customer_path(customer.id),class: "Customer-name__btn" do
+                    =customer.name  
+      .Side__footer
+        =link_to(new_customer_path,class: "Side-btn") do
+          ＋
+          顧客登録
+  .Main
+    .Main__header
+      .Main__header__contents
+        .Main__header__contents__left
           -if user_signed_in?
-            -if current_user.id == customer.user_id
-              .name
-                =link_to customer_path(customer.id),class: "Footer__content__btn" do
-                  =customer.id
-                  =customer.name  
-    .Contents__side__footer
-      =link_to(new_customer_path,class: "Footer__content__btn") do
-        ＋
-        顧客情報入力
-  .Contents__main
-    .Header
-      .Header__contents
-        .Header__contents__main
+            CustomerCalender
+        .Main__header__contents__right
           -if user_signed_in?
-            Schedule
-        .Header__contents__right
-          -if user_signed_in?
-            =link_to(destroy_user_session_path,method: :delete,class: "Hedder__contents__right__btn") do
+            =link_to(destroy_user_session_path,method: :delete,class: "Right__login") do
               ログアウト
           - else
-            =link_to(new_user_session_path,class: "Hedder__contents__right__btn") do
+            =link_to(new_user_session_path,class: "Right__login") do
               ログイン
-            =link_to(new_user_registration_path,class: "Hedder__contents__right__btn") do
+            =link_to(new_user_registration_path,class: "Right__new") do
               新規登録
-    .Body
+    .Main__body
       %p#calendar
-    .Footer
-      .Footer__content
-        .Footer__content__right
-          =link_to(new_event_path,class: "Footer__content__btn") do
-            ＋
-            スケジュール入力
+    .Main__footer
+      .Main__footer__content
+        =link_to(new_event_path,class: "Footer-btn") do
+          ＋
+          スケジュール入力

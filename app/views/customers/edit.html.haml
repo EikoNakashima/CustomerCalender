@@ -3,6 +3,7 @@
     %h3 顧客情報編集
     = form_with(model: @customer, local: true) do |f|
       = f.text_field :name, placeholder: "名前"
+      = f.text_field :code, placeholder: "顧客コード"
       = f.text_field :current_address, placeholder: "現住所"
       = f.text_field :building_site, placeholder: "建築地"
       = f.text_field :phone, placeholder: "電話番号"      
