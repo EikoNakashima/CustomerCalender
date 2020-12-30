@@ -14,7 +14,7 @@ document.addEventListener('turbolinks:load', function() {
     initialView: 'dayGridMonth',
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
-    height: 'auto',
+    height: 630,
     headerToolbar: {
       left: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
       center: "title",
