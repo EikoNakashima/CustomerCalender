@@ -2,9 +2,19 @@
   .Container
     %h3 イベント追加
     = form_with(model: @event, local: true) do |f|
-      = f.text_field :title, placeholder: "タイトル"
+      = f.text_field :title, placeholder: "タイトル",class: "text"
       = f.text_area :body, placeholder: "メモ", rows: "5"
+      .Container__start
+        開始日時
       = f.datetime_select :start
+      .Container__end
+        終了日時
       = f.datetime_select :end
-      = f.collection_check_boxes :customer_ids, Customer.where(user_id: current_user.id), :id, :name
+      .Container__name
+        顧客名
+        .Container__name__box
+          = f.collection_check_boxes :customer_ids, Customer.where(user_id: current_user.id), :id, :name, class: "Box"
       = f.submit "追加"
+
+= link_to root_path(current_user), class: "Listing__tpo" do
+  トップページに戻る

@@ -2,7 +2,7 @@
   .Container
     %h3 イベント編集
     = form_with(model: @event, local: true) do |f|
-      = f.text_field :title, placeholder: "タイトル"
+      = f.text_field :title, placeholder: "タイトル",class: "text"
       = f.text_area :body, placeholder: "メモ", rows: "5"
       = f.datetime_select :start
       = f.datetime_select :end

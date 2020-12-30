@@ -1,11 +1,14 @@
 .Contents
   .Container
-    %h3 顧客情報追加
+    %h3 顧客登録
     = form_with(model: @customer, local: true) do |f|
-      = f.text_field :name, placeholder: "名前"
-      = f.text_field :code, placeholder: "顧客コード"
-      = f.text_field :current_address, placeholder: "現住所"
-      = f.text_field :building_site, placeholder: "建築地"
-      = f.text_field :phone, placeholder: "電話番号"      
+      = f.text_field :name, placeholder: "名前",class: "text"
+      = f.text_field :code, placeholder: "顧客コード",class: "text"
+      = f.text_field :current_address, placeholder: "現住所",class: "text"
+      = f.text_field :building_site, placeholder: "建築地",class: "text"
+      = f.text_field :phone, placeholder: "電話番号",class: "text"      
       = f.text_area :body, placeholder: "メモ", rows: "5"
       = f.submit "新規顧客登録"
+
+= link_to root_path(current_user), class: "Listing__tpo" do
+  トップページに戻る

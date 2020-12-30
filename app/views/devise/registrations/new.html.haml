@@ -6,18 +6,20 @@
       .field
         = f.label :email
         %br/
-        = f.email_field :email
+        = f.email_field :email,class: "text"
       .field
         = f.label :password
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} 文字以上)
         %br/
-        = f.password_field :password, autocomplete: "off"
+        = f.password_field :password, autocomplete: "off",class: "text"
       .field
         = f.label :password_confirmation
         %br/
-        = f.password_field :password_confirmation, autocomplete: "off"
+        = f.password_field :password_confirmation, autocomplete: "off",class: "text"
       .actions
         = f.submit "新規登録"
 = render "devise/shared/links"
+= link_to root_path(current_user), class: "Listing__tpo" do
+  トップページに戻る
