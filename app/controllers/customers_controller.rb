@@ -36,7 +36,7 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to root_path, notice: '顧客情報を編集しました'
+      redirect_to customer_path, notice: '顧客情報を編集しました'
     else
       flash.now[:alert] = '必須事項を入力してください'
       render :edit

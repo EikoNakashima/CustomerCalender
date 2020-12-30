@@ -1,0 +1,118 @@
+.Show__title {
+  text-align: center;
+  margin: 10px;
+}
+.table-contents{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  vertical-align: inherit;
+  border-color: inherit;
+  justify-content: center;
+  .table-left{
+      width: 152px;
+      height: 100%;
+      background-color: #eee;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .table-right{
+      width: 467px;
+      height: 100%;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+  }
+}
+.Show__btn__items {
+  display: flex;
+  justify-content: center;
+}
+.Edit-btn{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  height: 60px;
+  width: 619px;
+  border: 1px solid #dedede;
+  background-color: rgb(134, 216, 248);
+  padding-top: 10px;
+  &__text {
+    margin: 10px;
+  }
+  &__top {
+    margin: 5px;
+  }
+}
+.Delete-btn{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  height: 60px;
+  width: 619px;
+  border: 1px solid #dedede;
+  background-color: rgb(236, 98, 33);
+  padding-top: 10px;
+  &__text {
+    margin: 10px;
+  }
+  &__top {
+    margin: 5px;
+  }
+}
+.Item-btn{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  height: 60px;
+  width: 619px;
+  border: 1px solid #dedede;
+  padding-top: 10px;
+  &__text{
+    margin: 10px;
+  }
+}
+
+.recode-contents{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  vertical-align: inherit;
+  border-color: inherit;
+  justify-content: center;
+  .recode-left{
+      width: 152px;
+      height: 100%;
+      background-color: #eee;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .recode-right{
+      width: 467px;
+      height: 100%;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: scroll;
+
+  }
+}
+.Link-top {
+  display: flex;
+  justify-content: center;
+}
+.Link-top__btn:hover {
+  background-color: rgb(223, 219, 219);
+}

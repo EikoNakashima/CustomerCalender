@@ -10,9 +10,9 @@
       = f.text_area :body, placeholder: "メモ", rows: "5"
       = f.submit "編集する"
 
-= link_to root_path(current_user), class: "Listing__tpo" do
-  トップページに戻る
-
+.Link-top
+  = link_to root_path(current_user), class: "Link-top__btn" do
+    トップページに戻る
 
 
 

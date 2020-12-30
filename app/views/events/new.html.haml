@@ -15,6 +15,6 @@
         .Container__name__box
           = f.collection_check_boxes :customer_ids, Customer.where(user_id: current_user.id), :id, :name, class: "Box"
       = f.submit "追加"
-
-= link_to root_path(current_user), class: "Listing__tpo" do
-  トップページに戻る
+.Link-top
+  = link_to root_path(current_user), class: "Link-top__btn" do
+    トップページに戻る

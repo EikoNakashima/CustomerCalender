@@ -1,7 +1,7 @@
 .Customer-contents {
   display: flex;
   .Side {
-    border: 1px solid black;
+    border-right: 1px solid black;
     width: 20%;
     &__header {
       height: 40px;
@@ -44,12 +44,13 @@
   }
   .Main {
     width: 80%;
+    height: 100vh;
   }
 }
 
 
 .Main__header {
-  height: 50px;
+  height: 40px;
   &__contents{
     display: flex;
     justify-content: space-between;

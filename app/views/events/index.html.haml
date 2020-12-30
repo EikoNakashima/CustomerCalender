@@ -19,8 +19,7 @@
     .Main__header
       .Main__header__contents
         .Main__header__contents__left
-          -if user_signed_in?
-            CustomerCalender
+          CustomerCalender
         .Main__header__contents__right
           -if user_signed_in?
             =link_to(destroy_user_session_path,method: :delete,class: "Right__login") do
@@ -34,6 +33,7 @@
       %p#calendar
     .Main__footer
       .Main__footer__content
-        =link_to(new_event_path,class: "Footer-btn") do
-          ＋
-          スケジュール入力
+        -if user_signed_in?
+          =link_to(new_event_path,class: "Footer-btn") do
+            ＋
+            スケジュール入力

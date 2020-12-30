@@ -1,33 +1,58 @@
 .Show  
-  顧客詳細ページ
-  .Show-heddar
-    .Show-hedder__top
-      = @customer.name
-    .Show-hedder__code
-      = @customer.code
-    .Show-hedder__address
-      = @customer.current_address
-    .Show-hedder__site
-      = @customer.building_site
-    .Show-hedder__phone 
-      = @customer.phone
-    .Show-hedder__body 
-      = @customer.body
-    .Show_hedder__event
-      - @customer.customer_events.each do |customer|
-        = customer.event.start
-        = customer.event.title
+  .Show__main
+    .Show__title  
+      顧客詳細ページ
+    .table-contents
+      .table-left
+        名前 
+      .table-right
+        = @customer.name
+    .table-contents
+      .table-left
+        顧客コード 
+      .table-right
+        = @customer.code
+    .table-contents
+      .table-left
+        現住所 
+      .table-right    
+        = @customer.current_address
+    .table-contents
+      .table-left
+        建築地 
+      .table-right    
+        = @customer.building_site
+    .table-contents
+      .table-left
+        電話番号 
+      .table-right 
+        = @customer.phone
+    .recode-contents
+      .recode-left
+        メモ 
+      .recode-right 
+        = @customer.body
+    .recode-contents    
+      .recode-left
+        活動記録 
+      .recode-right 
+        - @customer.customer_events.each do |customer|
+          .event-time
+            = customer.event.start.strftime("%Y年%m月%d日")
+            = customer.event.title
 
 
-.Edit_customer_btn
-  %span.Edit_customer_btn__text 編集する
-  = link_to edit_customer_path do
-    = icon 'fas', 'fas fa-cog fa-3x', class: 'Edit_customer_btn__Icon'
-
-.Delete-customer_btn
-  %span.Delete-customer_btn__text 削除する
-  = link_to customer_path,method: :delete,data: {confirm: '本当に削除しますか？'} do
-    = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-customer_btn__Icon'
-    
-= link_to root_path(current_user), class: "Listing__tpo" do
-  トップページに戻る
+  .Show__btn
+    .Show__btn__items
+      .Edit-btn
+        %span.Edit-btn__text 編集する
+        = link_to edit_customer_path do
+          = icon 'fas', 'fas fa-cog fa-3x', class: 'Edit-btn__icon'
+    .Show__btn__items
+      .Delete-btn
+        %span.Delete-btn__text 削除する
+        = link_to customer_path,method: :delete,data: {confirm: '本当に削除しますか？'} do
+          = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-btn__icon'
+  .Link-top
+    = link_to root_path(current_user), class: "Link-top__btn" do
+      トップページに戻る

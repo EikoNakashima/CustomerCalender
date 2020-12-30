@@ -20,6 +20,8 @@
         = f.password_field :password_confirmation, autocomplete: "off",class: "text"
       .actions
         = f.submit "新規登録"
-= render "devise/shared/links"
-= link_to root_path(current_user), class: "Listing__tpo" do
-  トップページに戻る
+.Link-top
+  = render "devise/shared/links"
+.Link-top
+  = link_to root_path(current_user), class: "Link-top__btn" do
+    トップページに戻る
