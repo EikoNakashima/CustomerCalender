@@ -37,7 +37,7 @@
         background-color: rgb(186, 252, 201);
       }
       .Side-btn:hover {
-        background-color: rgb(223, 219, 219);
+        opacity: 0.7;
         transition: 200ms;
       }
     }
@@ -104,7 +104,7 @@
       background-color: rgb(186, 252, 201);
     }
     .Footer-btn:hover {
-      background-color: rgb(223, 219, 219);
+      opacity: 0.7;
       transition: 200ms;
     }
   }

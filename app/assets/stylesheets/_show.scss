@@ -50,6 +50,9 @@
     margin: 5px;
   }
 }
+.Edit-btn:hover {
+  opacity: 0.7;
+}
 .Delete-btn{
   display: flex;
   justify-content: center;
@@ -65,6 +68,9 @@
   &__top {
     margin: 5px;
   }
+}
+.Delete-btn:hover{
+  opacity: 0.7;
 }
 .Item-btn{
   display: flex;
