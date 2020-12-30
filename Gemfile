@@ -59,3 +59,6 @@ gem "font-awesome-sass", '~>5.4.1'
 
 gem "devise"
 gem "pry-rails"
+
+gem 'devise-i18n'
+gem 'devise-i18n-views'

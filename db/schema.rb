@@ -22,23 +22,24 @@ ActiveRecord::Schema.define(version: 2020_12_26_104412) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.string "code"
     t.string "current_address"
     t.string "building_site"
     t.string "phone"
     t.text "body"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.string "body"
-    t.datetime "start"
-    t.datetime "end"
-    t.bigint "user_id"
+    t.datetime "start", null: false
+    t.datetime "end", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_events_on_user_id"

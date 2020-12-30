@@ -10,7 +10,7 @@
   font-family: "游ゴシック", "YuGothic";
 }
 
-.container {
+.Container {
   margin: 20px 0;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
@@ -26,8 +26,15 @@
   display: block;
   margin-top: 0em;
 }
+.text {
+  width: 100%;
+  margin: 5px 5px 15px 0;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
 
-form input,
 form textarea {
   width: 100%;
   margin: 5px 0 15px;
@@ -38,13 +45,28 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: #75e79b;
   border-radius: 20px;
   color: #fff;
   border: 0;
   font-size: 18px;
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
 }
 
 form input[type="submit"]:hover {
-  background-color: #84d3ef;
+  opacity: 0.7;
+}
+.Container__name {
+  width: auto;
+}
+.Container__name__box {
+  display: flex;
+}
+form input[type="checkbox"]  {
+  margin: 10px;
 }

@@ -1,24 +1,45 @@
-.Show  
-  イベント詳細ページ
-  .Show-heddar
-    .Show-hedder__top
-      = @event.title
-    .Show-hedder__main
-      = @event.body
-    .Show-hedder__start
-      = @event.start
-    .Show-hedder__end  
-      = @event.end
-
-.Edit_Item_Btn
-  %span.Edit_Item_Btn__Text 編集する
-  = link_to edit_event_path do
-    = icon 'fas', 'fas fa-cog fa-3x', class: 'Edit_Item_Btn__Icon'
-
-.Delete-ItemBtn
-  %span.Delete-ItemBtn__text 削除する
-  = link_to event_path,method: :delete do
-    = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-ItemBtn__Icon'
-    
-= link_to root_path(current_user), class: "Listing__tpo" do
-  トップページに戻る
+.Show
+  .Show__main
+    .Show__title  
+      イベント詳細ページ
+    .table-contents
+      .table-left
+        タイトル 
+      .table-right
+        = @event.title
+    .table-contents
+      .table-left
+        顧客名 
+      .table-right
+        - @event.customer_events.each do |event|
+          =event.customer.name 
+    .table-contents    
+      .table-left
+        開始日時
+      .table-right
+        = @event.start.strftime("%Y年%m月%d日%H:%M")
+    .table-contents    
+      .table-left
+        終了日時
+      .table-right
+        = @event.end.strftime("%Y年%m月%d日%H:%M")
+    .table-contents    
+      .table-left
+        メモ
+      .table-right
+        = @event.body  
+  .Show__btn
+    .Show__btn__items
+      .Edit-btn
+        %span.Edit-btn__text 編集する
+        = link_to edit_event_path do
+          = icon 'fas', 'fas fa-cog fa-3x', class: 'Edit-btn__icon'
+    .Show__btn__items
+      .Delete-btn
+        %span.Delete-btn__text 削除する
+        = link_to event_path,method: :delete,data: {confirm: '本当に削除しますか？'} do
+          = icon 'fas' , 'fas fa-trash-alt fa-3x', class: 'Delete-btn__icon'
+    .Show__btn__items      
+  .Link-top
+    = link_to root_path(current_user), class: "Link-top__btn" do
+      トップページに戻る
