@@ -7,6 +7,12 @@
         タイトル 
       .table-right
         = @event.title
+    .table-contents
+      .table-left
+        顧客名 
+      .table-right
+        - @event.customer_events.each do |event|
+          =event.customer.name 
     .table-contents    
       .table-left
         開始日時
