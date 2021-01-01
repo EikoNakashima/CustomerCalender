@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: RC_app2_production
-  username: RC_app2
-  password: <%= ENV['RC_APP2_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
