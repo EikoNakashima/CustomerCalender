@@ -38,7 +38,7 @@
       .recode-right 
         - @customer.customer_events.each do |customer|
           .event-time
-            = customer.event.start.strftime("%Y年%m月%d日")
+            = customer.event.start_time.strftime("%Y年%m月%d日")
             = customer.event.title
 
 

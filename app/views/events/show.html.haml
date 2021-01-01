@@ -17,12 +17,12 @@
       .table-left
         開始日時
       .table-right
-        = @event.start.strftime("%Y年%m月%d日%H:%M")
+        = @event.start_time.strftime("%Y年%m月%d日%H:%M")
     .table-contents    
       .table-left
         終了日時
       .table-right
-        = @event.end.strftime("%Y年%m月%d日%H:%M")
+        = @event.end_time.strftime("%Y年%m月%d日%H:%M")
     .table-contents    
       .table-left
         メモ

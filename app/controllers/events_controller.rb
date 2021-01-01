@@ -56,7 +56,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :body, :start, :end, :user, customer_ids:[]).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :body, :start_time, :end_time, :user, customer_ids:[]).merge(user_id: current_user.id)
   end
 
   def move_to_index
