@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_12_26_104412) do
 
-  create_table "customer_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "customer_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "customer_id"
     t.bigint "event_id"
     t.datetime "created_at", precision: 6, null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_104412) do
     t.index ["event_id"], name: "index_customer_events_on_event_id"
   end
 
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "code"
     t.string "current_address"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_104412) do
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "body"
     t.datetime "start_time", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_104412) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
