@@ -11,6 +11,7 @@
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^4.5.3",
+    "fullcalendar": "^5.5.0",
     "jquery": "^3.5.1",
     "turbolinks": "^5.2.0"
   },
