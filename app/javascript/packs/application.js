@@ -11,4 +11,4 @@ require("../calender.js")
 require('jquery') 
 
 import 'bootstrap';
-// import '../stylesheets/application';
+import '../stylesheets/application';
