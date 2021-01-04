@@ -9,3 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require("../calender.js")
 require('jquery') 
+
+import 'bootstrap';
+// import '../stylesheets/application';
