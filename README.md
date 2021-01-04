@@ -1,24 +1,76 @@
-# README
+# アプリ概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+# 使用技術・言語
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# インフラ構成
 
-* Deployment instructions
 
-* ...
+
+# 機能要件
+
+### 楽曲とコード譜の編集
+
+- 楽曲の作成・編集・削除
+- コード譜の作成・更新・削除
+- コード譜の編集キーボード
+
+### コード譜の閲覧
+
+- コード譜面の閲覧機能(音楽記号対応済み)
+- コード譜のキー(\*)切替機能
+- コード譜の信頼度評価ボタン(ajax)
+- 楽曲の練習をしていることの表明ボタン(ajax)
+- コード譜の信頼度順ソート
+
+\* 音楽用語。カラオケで操作するキーと同じものを指します
+
+### 楽曲の検索
+
+- 初心者向け曲などの属性表示
+- 条件検索: キーワード + 属性検索
+- 楽曲の練習人数ソート
+
+### ユーザ機能
+
+- ユーザ検索機能: 練習してる曲 + 活動地域 検索
+- ユーザ情報 登録・編集・削除
+- ユーザ認証機能(Devise)
+- マイページ 練習曲、信頼したコード譜の管理機能
+- テストユーザログイン機能
+
+### チャット機能
+
+- メッセージ送信機能
+- メッセージ一覧機能
+
+### UI
+
+- グローバルメニュー(ハンバーガーメニュー)
+- グローバルサーチ
+- ページネーション(pagy) (楽曲検索、練習曲リストなど)
+- パンくずナビ(gretel)
+
+# 非機能要件
+
+- レスポンシブ対応(モバイルファースト)
+- CSS の flocss 対応
+- エラーハンドリング
+- ReCAPTCHA(API)を用いたセキュアなユーザ認証
+- HTTPS 接続
+- ローリングアップデート
+- データベースの定期バックアップ(bash + S3)
+- モデル/コントローラの単体テスト
+- 統合テスト
+
+# このアプリで解決したい課題
+
+ジャムセッションは音楽を楽しむ上で、非常に重要だが、音楽初心者にとっての参加ハードルが高い。
+
+
