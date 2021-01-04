@@ -8,7 +8,7 @@
       font-size: 20px;
       text-align: center;
       padding-top: 10px;
-      background-color: rgb(247, 173, 173);
+      background-color: rgb(252, 109, 98);
     }
     &__body {
       overflow: scroll;
@@ -28,13 +28,13 @@
     &__footer {
      
       .Side-btn {
-        color: rgb(226, 43, 134);
+        color: rgb(55, 43, 226);
         font-size: 20px;
         display: block;
         text-align: center;
         margin: 10px;
         height: 40px;
-        background-color: rgb(186, 252, 201);
+        background-color: rgba(52, 179, 73, 0.774);
       }
       .Side-btn:hover {
         opacity: 0.7;
@@ -55,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     &__left {
-      color: rgb(59, 107, 212);
+      color: rgb(55, 43, 226);
       font-size: 20px;
       margin-top: 10px;
       margin-left: 10px;
@@ -95,13 +95,13 @@
   &__content{
     
     .Footer-btn {
-      color: rgb(226, 43, 134);
+      color: rgb(55, 43, 226);
       font-size: 20px;
       display: block;
       text-align: center;
       margin: 10px;
       height: 40px;
-      background-color: rgb(186, 252, 201);
+      background-color: rgba(52, 179, 73, 0.774);
     }
     .Footer-btn:hover {
       opacity: 0.7;
