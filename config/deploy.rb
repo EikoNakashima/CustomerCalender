@@ -14,7 +14,7 @@ set :rbenv_ruby, '2.6.5'
 
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh -i CustomerCalender.pem'] 
+                  keys: ['~/.ssh/CustomerCalender.pem'] 
 
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
