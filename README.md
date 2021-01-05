@@ -20,10 +20,10 @@
 http://54.92.32.88/
 
 ■ログインを試される場合こちらを入力ください。
-・email
-sample@gmail.com
-・パスワード
-sample1
+- email
+- sample@gmail.com
+- パスワード
+- sample1
 
 
 # 使用技術・言語
