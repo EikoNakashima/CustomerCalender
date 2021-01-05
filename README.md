@@ -40,6 +40,7 @@ sample1
 
 # インフラ構成
 
+![インフラ構築図](https://user-images.githubusercontent.com/68436861/103646336-dad7cb80-4f9c-11eb-81d7-9a4079bb42b3.png)
 
 
 # 機能要件
