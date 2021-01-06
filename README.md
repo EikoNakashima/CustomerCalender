@@ -66,6 +66,61 @@ http://54.92.32.88/
 いろんなアプリを使いながら顧客管理やスケジュール管理をしているのが大変なので
 同じアプリにまとめる事により業務効率化になるのではと考えました。
 
+# DB設計
+
+## Usersテーブル
+
+|Colum|Type|Options|
+|------|----|------|
+|email|string|null: false, unique: true|
+|encrypted_password|string|null: false, unique: true|
+
+## Association
+
+- has_many :events,foreign_key: :user_id, dependent: :destroy
+- has_many :customers,foreign_key: :user_id, dependent: :destroy
+
+## Eventsテーブル
+
+|Colum|Type|Options|
+|------|----|------|
+|title|string|null: false|
+|body|string|
+|start_time|datetime|null: false|
+|end_time|datetime|null: false|
+|user_id|reference|foreign_key: true|
+
+## Association
+- belongs_to :user, optional: true
+- has_many :customer_events,dependent: :destroy
+- has_many :customer,through: :customer_events,dependent: :destroy
 
 
+## Customersテーブル
+
+|Colum|Type|Options|
+|------|----|------|
+|name|string|null: false|
+|code|string|
+|current_address|string|
+|building_site|string|
+|phone|string|
+|body|text|
+|user_id|reference|foreign_key: true|
+
+## Association
+- belongs_to :user, optional: true
+- has_many :customer_events,dependent: :destroy
+- has_many :events, through: :customer_events,dependent: :destroy
+
+## CustomerEventsテーブル
+
+|Colum|Type|Options|
+|------|----|------|
+|customer_id|reference|foreign_key: true|
+|event_id|reference|foreign_key: true|
+
+## Association
+- belongs_to :customer
+- belongs_to :event
 
