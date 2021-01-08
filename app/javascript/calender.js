@@ -15,6 +15,7 @@ document.addEventListener('turbolinks:load', function() {
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 600,
+    displayEventTime: false,
     headerToolbar: {
       left: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
       center: "title",
@@ -42,7 +43,6 @@ document.addEventListener('turbolinks:load', function() {
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
-    
 
     eventSources: [{url:'/events.json',
     color: '#2ECCFA'}
