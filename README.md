@@ -28,7 +28,7 @@ http://54.92.32.88/
 
 # 使用技術・言語
 
-- フロントエンド(javascript, jQuery, fullcalender, HTML/CSS, HAML, Sass)
+- フロントエンド(javascript, jQuery, fullcalender, HTML/CSS, bootstrap)
 - バックエンド(Ruby on Rails6.0)
 - テスト(RSpec, FactoryBot)
 - Web サーバ(nginx, unicorn)
@@ -74,7 +74,6 @@ http://54.92.32.88/
 
 # 今後、追加したい機能
 - タスク機能
-- レスポンシブデザイン
 - ハンバーガーメニュー
 - Google マップAPI
 - 祝日の表示
