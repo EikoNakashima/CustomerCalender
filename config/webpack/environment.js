@@ -1,7 +1,5 @@
 const { environment } = require('@rails/webpacker')
 
-environment.config.resolve.alias = { 'vue$': 'vue/dist/vue.esm.js' }
-
 const webpack = require('webpack')
 environment.plugins.prepend(
   'Provide',
