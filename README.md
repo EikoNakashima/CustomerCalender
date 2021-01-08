@@ -28,7 +28,7 @@ http://54.92.32.88/
 
 # 使用技術・言語
 
-- フロントエンド(javascript, jQuery, fullcalender, HTML/CSS, bootstrap)
+- フロントエンド(javascript, jQuery, fullcalender, HTML/CSS)
 - バックエンド(Ruby on Rails6.0)
 - テスト(RSpec, FactoryBot)
 - Web サーバ(nginx, unicorn)
