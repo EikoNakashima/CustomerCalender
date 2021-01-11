@@ -12,10 +12,11 @@ document.addEventListener('turbolinks:load', function() {
     editable: true,
     nowIndicator: true,
     initialView: 'dayGridMonth',
+    displayEventTime: false,
+    
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 600,
-    displayEventTime: false,
     headerToolbar: {
       left: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
       center: "title",
@@ -50,8 +51,10 @@ document.addEventListener('turbolinks:load', function() {
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
 
+
   calendar.render();
 });
+
 
 
 
