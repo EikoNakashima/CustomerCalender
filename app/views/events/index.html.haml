@@ -36,23 +36,12 @@
       .Main__footer
         .Main__footer__content
           -if user_signed_in?
-            =link_to(destroy_user_session_path,method: :delete,class: "Right__login") do
-              ログアウト
-          - else
-            = link_to(users_guest_sign_in_path, method: :post,class: "Right__login" ) do
-              ゲストログイン（閲覧用）
-            =link_to(new_user_session_path,class: "Right__login") do
-              ログイン
-            =link_to(new_user_registration_path,class: "Right__new") do
-              新規登録
-    .Main__body
-      %p#calendar
-    .Main__footer
-      .Main__footer__content
-        -if user_signed_in?
-          =link_to(new_event_path,class: "Footer-btn") do
-            ＋
-            スケジュール入力
+            =link_to(new_event_path,class: "Footer-btn") do
+              ＋
+              スケジュール入力
+
+
+
   -if user_signed_in?
     .Side-hiden
       .Side-hiden__header
