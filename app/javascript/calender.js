@@ -43,7 +43,6 @@ document.addEventListener('turbolinks:load', function() {
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
-    
 
     eventSources: [{url:'/events.json',
     color: '#2ECCFA'}
@@ -51,8 +50,10 @@ document.addEventListener('turbolinks:load', function() {
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
 
+
   calendar.render();
 });
+
 
 
 
