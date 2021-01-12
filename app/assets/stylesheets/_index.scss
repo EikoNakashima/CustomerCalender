@@ -117,6 +117,7 @@ a {
 
 @media screen and (max-width: 479px) { /*スマホサイズ*/
   .Customer-contents {
+    // display: flex;
     .Side {
       display: none;
     }
@@ -183,7 +184,6 @@ a {
       }
     }
     .Side-hiden{
-      margin-top: 80px;
       &__header {
         height: 40px;
         font-size: 20px;
@@ -224,4 +224,7 @@ a {
   }
 }
 
+a {
+  text-decoration: none;
+}
 
