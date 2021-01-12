@@ -12,6 +12,7 @@ document.addEventListener('turbolinks:load', function() {
     editable: true,
     nowIndicator: true,
     initialView: 'dayGridMonth',
+    displayEventTime: false,
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 600,
