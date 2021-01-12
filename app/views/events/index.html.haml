@@ -31,8 +31,6 @@
               ログイン
             =link_to(new_user_registration_path,class: "Right__new") do
               新規登録
-           
-
     .Main__body
       %p#calendar
     .Main__footer
@@ -41,3 +39,19 @@
           =link_to(new_event_path,class: "Footer-btn") do
             ＋
             スケジュール入力
+  -if user_signed_in?
+    .Side-hiden
+      .Side-hiden__header
+        顧客一覧
+      .Side-hiden__body
+        .Side-hiden__body__customer
+          -@customer.each do |customer|
+            -if user_signed_in?
+              -if current_user.id == customer.user_id
+                .Customer-name
+                  =link_to customer_path(customer.id),class: "Customer-name__btn" do
+                    =customer.name  
+      .Side-hiden__footer
+        =link_to(new_customer_path,class: "Side-btn") do
+          ＋
+          顧客登録
