@@ -4,7 +4,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbolinks:load', function() {
 
   let calendarEl = document.getElementById('calendar');
   let calendar = new Calendar(calendarEl, {
@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     nowIndicator: true,
     initialView: 'dayGridMonth',
     displayEventTime: false,
-    
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     height: 600,
@@ -44,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
+    
 
     eventSources: [{url:'/events.json',
     color: '#2ECCFA'}
@@ -51,10 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
 
-
   calendar.render();
 });
-
 
 
 
