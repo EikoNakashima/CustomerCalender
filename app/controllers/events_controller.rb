@@ -5,6 +5,9 @@ class EventsController < ApplicationController
 
   
   def index
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
     @events = Event.all
     @customer = Customer.all
   end
