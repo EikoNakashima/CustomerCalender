@@ -11,8 +11,7 @@
 .contents__row {
   width: 100%;
   padding: 0 20px !important;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   margin-top: 0;
   margin-bottom: 0;
   max-width: 660px;
@@ -22,6 +21,7 @@
 
 .Container {
   margin: 20px 0;
+  width: 80%;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
@@ -89,8 +89,9 @@ form input[type="checkbox"]  {
   color: rgb(55, 43, 226);
   border: 0;
   font-size: 18px;
-  width: 100%;
-  margin: 5px 58px 15px;
+  width: 80%;
+  max-width: 600px;
+  // margin: 5px 58px 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
