@@ -1,3 +1,13 @@
+.User-contents{
+  &__header {
+    text-align: center;
+    &__message {
+      color: blue;
+      display: inline-block;
+      font-size: large;
+    }
+  }
+}
 .contents__row {
   width: 100%;
   padding: 0 20px !important;
@@ -70,4 +80,23 @@ form input[type="submit"]:hover {
 form input[type="checkbox"]  {
   margin: 10px;
 }
+.Link-top {
+  text-align: center;
+}
+.Guest {
+  background-color: rgba(241, 166, 53, 0.993);
+  border-radius: 20px;
+  color: rgb(55, 43, 226);
+  border: 0;
+  font-size: 18px;
+  width: 100%;
+  margin: 5px 58px 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
 
+.Guest:hover {
+  opacity: 0.8;
+}

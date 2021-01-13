@@ -1,22 +1,26 @@
-.contents__row
-  .container
-    %h2 ログインページ
-    = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true,class: "text"
-      .field
-        = f.label :password
-        %br/
-        = f.password_field :password, autocomplete: "off",class: "text"
-      - if devise_mapping.rememberable?
+.User-contents
+  .User-contents__header
+    .User-contents__header__message
+      CustomerCalender
+  .contents__row
+    .container
+      %h2 ログインページ
+      = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
         .field
-          
-      .actions
-        = f.submit "ログイン"
-.Link-top      
-  = render "devise/shared/links"
-.Link-top
-  = link_to root_path(current_user), class: "Link-top__btn" do
-    トップページに戻る
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true,class: "text"
+        .field
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "off",class: "text"
+        - if devise_mapping.rememberable?
+          .field
+            
+        .actions
+          = f.submit "ログイン"
+  .Link-top
+    = link_to(users_guest_sign_in_path, method: :post,class: "Guest" ) do
+      ゲストログイン（閲覧用）
+  .Link-top      
+    = render "devise/shared/links"
