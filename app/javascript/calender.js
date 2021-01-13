@@ -4,7 +4,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', function() {
 
   let calendarEl = document.getElementById('calendar');
   let calendar = new Calendar(calendarEl, {
