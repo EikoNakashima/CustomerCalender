@@ -1,5 +1,5 @@
 {
-  "name": "RC_app2",
+  "name": "CustomerCalender",
   "webpack-dev-server": "^3.11.1",
   "license": "UNLICENSED",
   "private": true,
