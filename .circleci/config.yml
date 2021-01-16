@@ -8,6 +8,11 @@ jobs:
           - BUNDLER_VERSION: 2.1.4
           - RAILS_ENV: 'test'
 
+      - image: circleci/mysql:5.7
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+          - MYSQL_ROOT_HOST: '%'
+
     working_directory: ~/CustomerCalender
 
     steps:
@@ -58,25 +63,10 @@ jobs:
 
   
 
-      - deploy:
-            name: Capistrano deploy
-            command: |
-              if [ "${CIRCLE_BRANCH}" != "master" ]; then
-                exit 0
-              fi
-              bundle exec cap production deploy
-# version: 2.1
-# orbs:
-#   ruby: circleci/ruby@0.1.2 
-
-# jobs:
-#   build:
-#     docker:
-#       - image: circleci/ruby:2.6.3-stretch-node
-#     executor: ruby/default
-#     steps:
-#       - checkout
-#       - run:
-#           name: Which bundler?
-#           command: bundle -v
-#       - ruby/bundle-install
+      # - deploy:
+      #       name: Capistrano deploy
+      #       command: |
+      #         if [ "${CIRCLE_BRANCH}" != "master" ]; then
+      #           exit 0
+      #         fi
+      #         bundle exec cap production deploy
