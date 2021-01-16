@@ -6,7 +6,7 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4'
+gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -73,5 +73,8 @@ gem "devise-i18n"
 gem "devise-i18n-views"
 
 group :production do
-  gem 'unicorn', '5.4.1'
 end
+
+# gem 'dotenv-rails'
+
+gem 'unicorn', '5.4.1'
