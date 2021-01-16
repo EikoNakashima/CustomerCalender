@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_PASSWORD: glory1121
+      MYSQL_DATABASE: CustomerCalender_development
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "4306:3306"
+
+  app:
+    build: .
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/CustomerCalender
+      - public-data:/CustomerCalender/public
+      - tmp-data:/CustomerCalender/tmp
+      - log-data:/CustomerCalender/log
+    tty: true
+    stdin_open: true
+    depends_on: 
+      - db
+    links: 
+      - db
+
+  web:
+    build:
+      context: containers/nginx
+    ports:
+      - 80:80
+    volumes:
+      - public-data:/CustomerCalender/public
+      - tmp-data:/CustomerCalender/tmp
+    tty: true
+    stdin_open: true
+    depends_on: 
+      - db
+    links: 
+      - db
+  
+
+
+volumes:
+  mysql-data:
+  public-data:
+  tmp-data:
+  log-data:
