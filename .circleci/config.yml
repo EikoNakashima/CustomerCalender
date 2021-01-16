@@ -1,0 +1,84 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          - BUNDLER_VERSION: 2.1.4
+          - RAILS_ENV: 'test'
+
+    working_directory: ~/CustomerCalender
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            gem install bundler -v 2.1.4
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run: mv config/database.yml.ci config/database.yml    
+
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+    # - run:
+    #     name: Rubocop
+    #     command: bundle exec rubocop
+
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)"
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec.xml \
+              --format progress \
+              $TEST_FILES
+
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+
+      # - add_ssh_keys:
+      #     fingerprints:
+      #         - "49:54:0f:8a:75:99:eb:25:9b:d5:8f:8a:29:40:58:22"
+
+      - deploy:
+            name: Capistrano deploy
+            command: |
+              if [ "${CIRCLE_BRANCH}" != "master" ]; then
+                exit 0
+              fi
+              bundle exec cap production deploy
+# version: 2.1
+# orbs:
+#   ruby: circleci/ruby@0.1.2 
+
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/ruby:2.6.3-stretch-node
+#     executor: ruby/default
+#     steps:
+#       - checkout
+#       - run:
+#           name: Which bundler?
+#           command: bundle -v
+#       - ruby/bundle-install
