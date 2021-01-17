@@ -61,8 +61,8 @@ test:
 production:
   <<: *default
   database: CustomerCalender_production
-  # username: root
-  # password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   # socket: /var/lib/mysql/mysql.sock
 
   # database: <%= ENV['DB_DATABASE'] %>
@@ -70,7 +70,7 @@ production:
   encoding: utf8mb4
   charset: utf8mb4
   collation: utf8mb4_general_ci
-  host: db
+  # host: db
   # host: <%= ENV['DB_HOST'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # username: <%= ENV['DB_USERNAME'] %>
+  # password: <%= ENV['DB_PASSWORD'] %>
