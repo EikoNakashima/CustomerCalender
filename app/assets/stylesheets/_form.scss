@@ -55,7 +55,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: rgba(52, 179, 73, 0.774);
+  background-color: rgb(64, 197, 86);
   border-radius: 20px;
   color: rgb(55, 43, 226);
   border: 0;
@@ -82,6 +82,7 @@ form input[type="checkbox"]  {
 }
 .Link-top {
   text-align: center;
+  margin-top: 10px;
 }
 .Guest {
   background-color: rgba(241, 166, 53, 0.993);
@@ -91,7 +92,6 @@ form input[type="checkbox"]  {
   font-size: 18px;
   width: 80%;
   max-width: 600px;
-  // margin: 5px 58px 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
@@ -100,4 +100,9 @@ form input[type="checkbox"]  {
 
 .Guest:hover {
   opacity: 0.8;
+}
+
+.Contents{
+  display: flex;
+  justify-content: center;
 }
