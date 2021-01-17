@@ -1,7 +1,7 @@
 version: 2.1
 
-jobs:
-  build:
+executors:
+  default:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
@@ -14,7 +14,22 @@ jobs:
           - MYSQL_ROOT_HOST: '%'
 
     working_directory: ~/CustomerCalender
+# jobs:
+#   build:
+    # docker:
+    #   - image: circleci/ruby:2.6.5-node-browsers
+    #     environment:
+    #       - BUNDLER_VERSION: 2.1.4
+    #       - RAILS_ENV: 'test'
 
+    #   - image: circleci/mysql:5.7
+    #     environment:
+    #       - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    #       - MYSQL_ROOT_HOST: '%'
+
+    # working_directory: ~/CustomerCalender
+commands:
+  setup:
     steps:
       - checkout
 
@@ -33,8 +48,14 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+jobs:
+  test:
+    executor: default
+    environment:
+      RAILS_ENV: test
+    steps:
+      - setup
       - run: mv config/database.yml.ci config/database.yml    
-
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
@@ -60,13 +81,24 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-
+  deploy:
+    executor: default
+    steps:
+      - setup
       - add_ssh_keys:
           fingerprints:
             - "e6:86:c2:2a:c4:91:de:e4:8f:7c:1a:08:aa:fc:2e:e3"
-
-  
-
       - deploy:
             name: Capistrano deploy
             command: bundle exec cap production deploy
+
+workflows:
+  test_and_deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
