@@ -3,11 +3,11 @@ version: '3'
 services:
   db:
     image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user_name
-      MYSQL_PASSWORD: glory1121
-      MYSQL_DATABASE: CustomerCalender_development
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: password
+    #   MYSQL_USER: user_name
+    #   MYSQL_PASSWORD: glory1121
+    #   MYSQL_DATABASE: CustomerCalender_development
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
