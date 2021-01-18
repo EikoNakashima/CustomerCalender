@@ -5,16 +5,16 @@ describe EventsController, type: :controller do
     @user = FactoryBot.create(:user)
   end
 
-  # describe 'GET #index' do
-  #   it "renders the :index template" do
-  #     get :index
-  #     expect(response).to render_template :index
-  #   end
-  #   it "returns a 200 response" do
-  #     get :index
-  #     expect(response).to have_http_status "200"
-  #   end
-  # end
+  describe 'GET #index' do
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
+    end
+    it "returns a 200 response" do
+      get :index
+      expect(response).to have_http_status "200"
+    end
+  end
 
   describe 'GET #new' , type: :controller do
 
@@ -81,34 +81,44 @@ describe EventsController, type: :controller do
     end
   end
 
-  # describe '#destroy' , type: :controller do
+  describe '#destroy' , type: :controller do
 
-  #   context 'log in' do
-  #     context 'can destroy' do
+    context 'log in' do
+      context 'can destroy' do
        
-  #       it 'deletes a event' do
-  #         sign_in @user
-  #         @event = FactoryBot.create(:event)
-  #         expect{ delete :destroy, params: {id: @event.id}
-  #       }.to change(@user.events, :count).by(-1)
-  #       end
+        it 'deletes a event' do
+          sign_in @user
+          @event = FactoryBot.create(:event)
+          expect{ delete :destroy, params: {id: @event.id}
+        }.to change(@user.events, :count).by(-1)
+        end
 
-  #       it 'redirects to root_path' do
+        it 'redirects to root_path' do
 
-  #         sign_in @user
-  #         delete :destroy
-  #         expect(response).to redirect_to(root_path)
-  #       end
-  #     end
+          sign_in @user
+          delete :destroy
+          expect(response).to redirect_to(root_path)
+        end
+      end
 
-  #     context 'not log in' do
-  #       it "redirects to new_user_session_path" do
-  #         delete :destroy
-  #         expect(response).to redirect_to(new_user_session_path)
-  #       end
-  #     end
-  #   end
-  # end
+      context 'not log in' do
+        it "redirects to new_user_session_path" do
+          delete :destroy
+          expect(response).to redirect_to(new_user_session_path)
+        end
+      end
+    end
+  end
+
+  describe '#edit' , type: :controller do
+  end
+
+  describe '#update' , type: :controller do
+  end
+
+  describe '#show' , type: :controller do
+  end
+
 
 end
 
