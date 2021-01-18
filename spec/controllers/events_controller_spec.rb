@@ -15,6 +15,7 @@ describe EventsController, type: :controller do
   #     expect(response).to have_http_status "200"
   #   end
   # end
+  
 
   describe 'GET #new' , type: :controller do
 
