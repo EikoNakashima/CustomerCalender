@@ -23,6 +23,7 @@ services:
     links: 
       - db
 
+
   web:
     build:
       context: containers/nginx
