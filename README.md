@@ -24,6 +24,7 @@
 # URL
 https://customer-calender.com/
 
+http://54.92.32.88/
 
 #　ログイン方法
 簡単ログイン機能ございます。
