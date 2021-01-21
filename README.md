@@ -26,16 +26,16 @@ https://customer-calender.com/
 
 http://54.92.32.88/
 
-#　ログイン方法
+# ログイン方法
 簡単ログイン機能ございます。
 ゲストログイン（閲覧用）よりテストユーザーとしてログインして頂けます。
 
 
 # 使用技術・言語
 
-- フロントエンド(javascript, jQuery, fullcalender, HTML/CSS)
+- フロントエンド(javascript, jQuery, fullcalender v5, Haml/scss)
 - バックエンド(Ruby on Rails6.0)
-- テスト(RSpec, FactoryBot)
+- テスト(RSpec, FactoryBot,faker)
 - Web サーバ(nginx, unicorn)
 - データベース(MySQL)
 - AWS(VPC, EC2, Route53, ELB)
@@ -71,7 +71,8 @@ http://54.92.32.88/
 
 # このアプリで解決したい課題
 
-いろんなアプリを使いながら顧客管理やスケジュール管理をしているのが大変なので
+- 営業マンの業務効率化。
+いろんなアプリを使いながら顧客管理やスケジュール管理をしているのが大変なので、
 同じアプリにまとめる事により業務効率化になるのではと考えました。
 
 # 実際使ってみた声
@@ -85,5 +86,5 @@ http://54.92.32.88/
 - Google マップAPI
 - 祝日の表示
 - 顧客ごとのスケジュール表示
-
+- レスポンシブに使いやすく修正
 
