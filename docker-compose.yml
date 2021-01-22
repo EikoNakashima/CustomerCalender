@@ -7,6 +7,9 @@ services:
       - mysql-data:/var/lib/mysql
     ports:
       - "4306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: glory1121
+      MYSQL_DATABASE: root
     tty: true
     stdin_open: true
 
