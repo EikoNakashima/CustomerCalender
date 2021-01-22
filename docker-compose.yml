@@ -15,7 +15,7 @@ services:
 
   app:
     build: .
-    command: bundle exec puma -C config/puma.rb
+    command: bundle exec puma -C config/puma.rb　-e production -d
     volumes:
       - .:/CustomerCalender
       - public-data:/CustomerCalender/public
