@@ -13,16 +13,16 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch("MYSQL_USERNAME", "root") %>
-  password: <%= ENV.fetch("MYSQL_PASSWORD", "password") %>
-  host: <%= ENV.fetch("MYSQL_HOST", "db") %>
+ 
   
   
 development:
   <<: *default
+  host: 127.0.0.1
   database: CustomerCalender_development
   username: root
   password:
+  socket: /tmp/mysql.sock
   
 
 # Warning: The database defined as "test" will be erased and
@@ -30,9 +30,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: 127.0.0.1
   database: CustomerCalender_test
   username: root
   password:
+  socket: /tmp/mysql.sock
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
