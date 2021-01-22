@@ -12,6 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!/tmp/pid/.keep
+!/tmp/sockets/.keep
 
 
 # Ignore uploaded files in development.
@@ -38,5 +40,3 @@ dist
 /.env
 /config/credentials/production.key
 
-!/tmp/pid/.keep
-!/tmp/sockets/.keep
