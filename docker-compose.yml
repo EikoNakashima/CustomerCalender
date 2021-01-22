@@ -7,6 +7,8 @@ services:
       - mysql-data:/var/lib/mysql
     ports:
       - "4306:3306"
+    tty: true
+    stdin_open: true
 
   app:
     build: .
@@ -47,4 +49,3 @@ volumes:
   tmp-data:
   log-data:
 
-    
