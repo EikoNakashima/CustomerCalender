@@ -9,11 +9,8 @@ services:
       - "4306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: glory1121
-      # MYSQL_PASSWORD: glory1121
-      # MYSQL_PASSWORD: password
       MYSQL_DATABASE: root
-      # MYSQL_DATABASE: CustomerCalender_development
-    tty: true
+      tty: true
     stdin_open: true
 
   app:
@@ -36,7 +33,7 @@ services:
     build:
       context: containers/nginx
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - public-data:/CustomerCalender/public
       - tmp-data:/CustomerCalender/tmp
