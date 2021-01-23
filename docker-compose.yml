@@ -10,10 +10,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: glory1121
       # MYSQL_PASSWORD: glory1121
-      MYSQL_PASSWORD: password
+      # MYSQL_PASSWORD: password
       MYSQL_DATABASE: root
       # MYSQL_DATABASE: CustomerCalender_development
-      MYSQL_USER: root
     tty: true
     stdin_open: true
 
