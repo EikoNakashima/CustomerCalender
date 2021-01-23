@@ -14,15 +14,19 @@ default: &default
   encoding: utf8
   charset: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: glory1121
-  host: db
+  username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
+  password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
+
+
+  # username: root
+  # password: glory1121
+  # host: db
   
   
 development:
   <<: *default
   database: CustomerCalender_development
- 
+  host: db
   
 
 # Warning: The database defined as "test" will be erased and

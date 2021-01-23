@@ -8,8 +8,10 @@ services:
     ports:
       - "4306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: glory1121
-      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_PASSWORD: glory1121
+      MYSQL_DATABASE: CustomerCalender_development
     tty: true
     stdin_open: true
 
