@@ -14,12 +14,11 @@ default: &default
   encoding: utf8
   charset: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
-  password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
-
-
-  # username: root
-  # password: glory1121
+  # username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
+  # password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
+  
+  username: root
+  password: glory1121
   # host: db
   
   
