@@ -10,7 +10,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: glory1121
       MYSQL_DATABASE: root
-      tty: true
+    tty: true
     stdin_open: true
 
   app:
