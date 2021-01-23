@@ -33,7 +33,7 @@ services:
     build:
       context: containers/nginx
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - public-data:/CustomerCalender/public
       - tmp-data:/CustomerCalender/tmp
