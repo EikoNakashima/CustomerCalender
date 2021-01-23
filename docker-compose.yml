@@ -9,7 +9,8 @@ services:
       - "4306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: glory1121
-      MYSQL_DATABASE: root
+      MYSQL_DATABASE: CustomerCalender_development
+      MYSQL_USER: root
     tty: true
     stdin_open: true
 
