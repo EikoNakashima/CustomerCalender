@@ -10,7 +10,9 @@ RUN apt-get update -qq && \
                        yarn
 
 RUN mkdir /CustomerCalender
-ENV LANG C.UTF-8
+ENV LANG="ja_JP.UTF-8" \
+    LANGUAGE="ja_JP:ja" \
+    LC_ALL="ja_JP.UTF-8"
 
 WORKDIR /CustomerCalender
 
