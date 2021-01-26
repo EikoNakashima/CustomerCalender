@@ -21,10 +21,7 @@ RUN gem install bundler
 RUN bundle install
 RUN yarn install
 
-# RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
-# ENV LANG="ja_JP.UTF-8" \
-#     LANGUAGE="ja_JP:ja" \
-#     LC_ALL="ja_JP.UTF-8"
+
 ENV LANG C.UTF-8
 RUN unlink /etc/localtime && \
     ln -s /usr/share/zoneinfo/Japan /etc/localtime
