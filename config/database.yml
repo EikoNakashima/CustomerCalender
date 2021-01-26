@@ -14,9 +14,6 @@ default: &default
   encoding: utf8
   charset: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
-  # password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
-
   username: root
   password: glory1121
   host: db
@@ -24,9 +21,7 @@ default: &default
   
 development:
   <<: *default
-  database: CustomerCalender_development
-  # host: db
-  
+  database: CustomerCalender_development  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
