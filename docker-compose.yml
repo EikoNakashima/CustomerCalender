@@ -12,6 +12,7 @@ services:
       MYSQL_ROOT_PASSWORD: glory1121
       MYSQL_PASSWORD: glory1121
       MYSQL_DATABASE: root
+      TZ: 'Asia/Tokyo'
     tty: true
     stdin_open: true
 
@@ -23,6 +24,8 @@ services:
       - public-data:/CustomerCalender/public
       - tmp-data:/CustomerCalender/tmp
       - log-data:/CustomerCalender/log
+    environment: 
+      TZ: 'Asia/Tokyo'
     tty: true
     stdin_open: true
     depends_on: 
