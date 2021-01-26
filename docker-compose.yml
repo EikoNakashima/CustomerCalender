@@ -23,7 +23,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
     command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/CustomerCalender
