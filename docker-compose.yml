@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     build:
-    context: .
+      context: .
       dockerfile: Dockerfile.mysql
     restart: always
     image: mysql:5.7
