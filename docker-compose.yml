@@ -4,7 +4,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: Dockerfile.mysql
+      dockerfile: Dockerfile.mysql
     restart: always
     image: mysql:5.7
     volumes:
@@ -21,7 +21,7 @@ services:
     stdin_open: true
 
   app:
-    build: .
+    build:
       context: .
       dockerfile: Dockerfile.dev
     command: bundle exec puma -C config/puma.rb
