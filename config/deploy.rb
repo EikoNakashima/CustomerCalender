@@ -42,4 +42,4 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-set :linked_files, 'config/credentials/production.key'
+# set :linked_files, 'config/credentials/production.key'
