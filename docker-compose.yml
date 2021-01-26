@@ -11,10 +11,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: glory1121
       MYSQL_DATABASE: root
-      # MYSQL_ROOT_PASSWORD: password
-      # MYSQL_USER: root
-      # MYSQL_PASSWORD: glory1121
-      # MYSQL_DATABASE: CustomerCalender_development
     tty: true
     stdin_open: true
 
@@ -58,73 +54,3 @@ volumes:
   log-data:
 
 
-
-#     # docker-composerリファレンス和訳 
-# # https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa
-# version: '3'
-# services:
-#   db:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile-mysql
-#     # 実行時に再起動するかどうか(今回はdockerをビルド時や立ち上げる際にMYSQLを再起動、という意味)
-#     restart: always
-#     image: mysql:8.0.19
-#     command: --default-authentication-plugin=mysql_native_password
-#     # envを読み込んだだけではcomposeの中でしか公開されないためenvironmentで宣言
-#     environment:
-#       MYSQL_ROOT_PASSWORD: root
-#       TZ: 'Asia/Tokyo'
-#     volumes:
-#       - db-data:/var/lib/mysql
-#     tty: true
-#     ports:
-#       - 6306:3306
-#   app:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile-ruby-dev
-#     # rails sではpuma.rbを読まない => nginxとsocket通信できないので注意。
-#     command: >
-#       bash -c "bundle install &&
-#       bin/rails db:create &&
-#       bin/rails db:migrate &&
-#       rm -rf tmp/pids/server.pid &&
-#       bundle exec rails s -b 0.0.0.0 -p 3000"
-#     volumes:
-#       # Dockerfileで定義したWORKDIRと同じ名前で、そこから相対パスで考えてマウント
-#       - .:/app
-#       - bundle-data:/app/vendor/bundle
-#       - bundle:/app/.bundle
-#       - public:/app/public
-#       - tmp:/app/tmp
-#       - log:/app/log
-#     # ホスト(自分のPC)で4000にアクセスすると、向こうの3000に行く。なのでlocalhost:4000でアクセス。
-#     ports:
-#       - 4000:3000
-#     environment:
-#       DATABASE_PASSWORD: root
-#       DATABASE_HOST: db
-#       TZ: 'Asia/Tokyo'
-#     depends_on:
-#       - db
-#     tty: true
-#     stdin_open: true
-# #
-# #  webserver:
-# #    build:
-# #      context: containers/nginx
-# #    volumes:
-# #      - public:/app/public
-# #      - tmp:/app/tmp
-# #    ports:
-# #      - 80:80
-# #    depends_on:
-# #      - app
-# volumes:
-#   db-data:
-#   bundle-data:
-#   bundle:
-#   log:
-#   public:
-#   tmp:
