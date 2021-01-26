@@ -1,0 +1,19 @@
+FROM mysql:5.7
+
+RUN apt-get update && \
+    apt-get install -y locales && \
+    rm -rf /var/lib/apt/lists/*
+ENV LC_ALL ja_JP.UTF-8
+
+
+RUN { \
+    echo '[mysqld]'; \
+    echo 'character-set-server=utf8mb4'; \
+    echo 'collation-server=utf8mb4_general_ci'; \
+    echo 'innodb_file_per_table'; \
+    echo 'max_allowed_packet=16M'; \
+    echo '[client]'; \
+    echo 'default-character-set=utf8mb4'; \
+    echo 'innodb_file_format=barracuda'; \
+    echo 'innodb_large_prefix = 1'; \
+    } > /etc/mysql/conf.d/charset.cnf
