@@ -37,6 +37,7 @@ node_modules
 npm-debug.log
 dist
 
-# /.env
+/.env
 # /config/credentials/production.key
+
 
