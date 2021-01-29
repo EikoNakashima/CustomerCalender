@@ -24,8 +24,6 @@
 # URL
 https://customer-calender.com/
 
-http://54.92.32.88/
-
 # ログイン方法
 簡単ログイン機能ございます。
 ゲストログイン（閲覧用）よりテストユーザーとしてログインして頂けます。
@@ -36,16 +34,18 @@ http://54.92.32.88/
 - フロントエンド(javascript, jQuery, fullcalender v5, Haml/scss)
 - バックエンド(Ruby on Rails6.0)
 - テスト(RSpec, FactoryBot,faker)
-- Web サーバ(nginx, unicorn)
+- Web サーバ(nginx)
+- アプリケーションサーバ(unicorn)
 - データベース(MySQL)
-- AWS(VPC, EC2, Route53, ELB)
-- 開発環境(MacOS, VScode, Git, GitHub, Docker, Circleci)
+- AWS(VPC, EC2, Route53, ELB, ACM)
+- 開発環境(MacOS, VScode, Git, GitHub, Docker, Circle-ci, capistrano)
 
 
 
 # インフラ構成
 
-![インフラ構築図　new](https://user-images.githubusercontent.com/68436861/104837050-777f5f00-58f5-11eb-8fb6-1576a8c9df60.png)
+![インフラ構成new2](https://user-images.githubusercontent.com/68436861/106246769-fc516d80-6251-11eb-8360-94e95a89db85.png)
+
 
 
 
@@ -80,6 +80,8 @@ http://54.92.32.88/
 - とても使いやすい。今まで別のアプリで顧客情報を管理していたので便利(Mさん)
 - タスク機能があると、より使いやすそう(Kさん)
 - ケータイでもパソコンでも開けるのは良い。ただ、ケータイでは見にくい(Hさん)
+- iphoneアプリにして欲しい(Nさん)
+
 
 # 今後、追加したい機能
 - タスク機能
