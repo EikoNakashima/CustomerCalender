@@ -2,31 +2,31 @@
   .Show__main
     .Show__title  
       イベント詳細ページ
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         タイトル 
-      .table-right
+      .Table__right
         = @event.title
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         顧客名 
-      .table-right
+      .Table__right
         - @event.customer_events.each do |event|
           =event.customer.name 
-    .table-contents    
-      .table-left
+    .Table    
+      .Table__left
         開始日時
-      .table-right
+      .Table__right
         = @event.start_time.strftime("%Y年%m月%d日%H:%M")
-    .table-contents    
-      .table-left
+    .Table    
+      .Table__left
         終了日時
-      .table-right
+      .Table__right
         = @event.end_time.strftime("%Y年%m月%d日%H:%M")
-    .table-contents    
-      .table-left
+    .Table    
+      .Table__left
         メモ
-      .table-right
+      .Table__right
         = @event.body  
   .Show__btn
     .Show__btn__items

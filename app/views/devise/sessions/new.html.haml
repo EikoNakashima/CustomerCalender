@@ -2,8 +2,8 @@
   .User-contents__header
     .User-contents__header__message
       CustomerCalender
-  .contents__row
-    .container
+  .Contents__row
+    .Contents__row__login
       %h2 ログインページ
       = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
         .field

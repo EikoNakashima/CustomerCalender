@@ -2,40 +2,40 @@
   .Show__main
     .Show__title  
       顧客詳細ページ
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         名前 
-      .table-right
+      .Table__right
         = @customer.name
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         顧客コード 
-      .table-right
+      .Table__right
         = @customer.code
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         現住所 
-      .table-right    
+      .Table__right    
         = @customer.current_address
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         建築地 
-      .table-right    
+      .Table__right    
         = @customer.building_site
-    .table-contents
-      .table-left
+    .Table
+      .Table__left
         電話番号 
-      .table-right 
+      .Table__right 
         = @customer.phone
-    .recode-contents
-      .recode-left
+    .Recode
+      .Recode__left
         メモ 
-      .recode-right 
+      .Recode__right 
         = @customer.body
-    .recode-contents    
-      .recode-left
+    .Recode    
+      .Recode__left
         活動記録 
-      .recode-right 
+      .Recode__right 
         - @customer.customer_events.each do |customer|
           .event-time
             = customer.event.start_time.strftime("%Y年%m月%d日")
