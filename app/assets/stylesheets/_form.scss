@@ -8,7 +8,7 @@
     }
   }
 }
-.contents__row {
+.Contents__row {
   width: 100%;
   padding: 0 20px !important;
   margin: auto;
@@ -16,7 +16,6 @@
   margin-bottom: 0;
   max-width: 660px;
   box-sizing: border-box;
-  font-family: "游ゴシック", "YuGothic";
 }
 
 .Container {
@@ -26,10 +25,6 @@
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
-}
-
-.new_user {
-  font-family: "游ゴシック", "YuGothic";
 }
 
 .form {
@@ -42,7 +37,6 @@
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
 }
 
 form textarea {
@@ -51,7 +45,6 @@ form textarea {
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
 }
 
 form input[type="submit"] {
@@ -65,7 +58,6 @@ form input[type="submit"] {
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
 }
 
 form input[type="submit"]:hover {
