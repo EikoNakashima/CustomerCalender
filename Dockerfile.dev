@@ -21,11 +21,6 @@ RUN gem install bundler
 RUN bundle install
 RUN yarn install
 
-
-ENV LANG C.UTF-8
-RUN unlink /etc/localtime && \
-    ln -s /usr/share/zoneinfo/Japan /etc/localtime
-
 COPY . /CustomerCalender
 
 RUN mkdir -p tmp/sockets
