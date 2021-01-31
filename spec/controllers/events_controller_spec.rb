@@ -9,7 +9,6 @@ describe EventsController, type: :controller do
     it "redirects the page to /users/sign_in" do
       get :index
       expect(response).to redirect_to "/users/sign_in"
-      # render_template :index
     end
     it "returns a 302 response" do
       get :index
@@ -77,35 +76,6 @@ describe EventsController, type: :controller do
       context 'not log in' do
         it "redirects to new_user_session_path" do
           post :create
-          expect(response).to redirect_to(new_user_session_path)
-        end
-      end
-    end
-  end
-
-  describe '#destroy' , type: :controller do
-
-    context 'log in' do
-      context 'can destroy' do
-       
-        it 'deletes a event' do
-          sign_in @user
-          @event = FactoryBot.create(:event)
-          expect{ delete :destroy, params: {id: @event.id}
-        }.to change(@user.events, :count).by(-1)
-        end
-
-        it 'redirects to root_path' do
-
-          sign_in @user
-          delete :destroy
-          expect(response).to redirect_to(root_path)
-        end
-      end
-
-      context 'not log in' do
-        it "redirects to new_user_session_path" do
-          delete :destroy
           expect(response).to redirect_to(new_user_session_path)
         end
       end
