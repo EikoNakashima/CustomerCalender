@@ -3,6 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
 document.addEventListener('turbolinks:load', function() {
 
@@ -45,10 +46,20 @@ document.addEventListener('turbolinks:load', function() {
     },
     
 
-    eventSources: [{url:'/events.json',
-    color: '#2ECCFA'}
+    eventSources: [
+      {
+        url:'/events.json',color: '#2ECCFA'
+      },
+      {
+        googleCalendarApiKey: 'AIzaSyAWoIM8yR2KM0oMexQ_FNqMGvvhQlaLfIA',
+        googleCalendarId: 'japanese__ja@holiday.calendar.google.com',
+        className: 'Holiday',
+        display: 'background',
+        color: 'red',
+      }
     ],
-    plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
+    
+    plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin, googleCalendarPlugin ]
   });
 
   calendar.render();

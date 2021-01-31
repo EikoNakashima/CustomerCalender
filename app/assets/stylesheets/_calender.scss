@@ -8,18 +8,21 @@
 
 // 土曜日
 .fc-day-sat {
+  background-color: rgb(169, 212, 252);
   .fc-daygrid-day-top, .fc-scrollgrid-sync-inner .fc-col-header-cell-cushion, .fc-list-day-cushion {
-    color: blue;
+    // color: blue;
   }
 }
 
 // 日曜日
 .fc-day-sun{
+  background-color: rgb(252, 190, 190);
   .fc-daygrid-day-top, .fc-scrollgrid-sync-inner .fc-col-header-cell-cushion, .fc-list-day-cushion {
-    color: red;
+    // color: red;
   }
 }
 
 .fc-content.fc-time.fc-event-time{
   display: none;
 }
+
