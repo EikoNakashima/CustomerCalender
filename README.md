@@ -39,6 +39,7 @@ https://customer-calender.com/
 - データベース(MySQL)
 - AWS(VPC, EC2, Route53, ELB, ACM)
 - 開発環境(MacOS, VScode, Git, GitHub, Docker, Circle-ci, capistrano)
+- API (Google Calendar API )
 
 
 
@@ -68,6 +69,7 @@ https://customer-calender.com/
 - レスポンシブ対応
 - HTTPS 接続
 - モデル/コントローラの単体テスト
+- Google Calendar API による祝日表示
 
 # このアプリで解決したい課題
 
@@ -85,8 +87,6 @@ https://customer-calender.com/
 
 # 今後、追加したい機能
 - タスク機能
-- Google マップAPI
-- 祝日の表示
 - 顧客ごとのスケジュール表示
 - レスポンシブに使いやすく修正
 - アプリ名修正(calender→calendar)
