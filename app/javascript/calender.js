@@ -45,8 +45,15 @@ document.addEventListener('turbolinks:load', function() {
     },
     
 
-    eventSources: [{url:'/events.json',
-    color: '#2ECCFA'}
+    eventSources: [
+      {
+        url:'/events.json',color: '#2ECCFA'
+      },
+      {
+        googleCalendarApiKey: 'AIzaSyAWoIM8yR2KM0oMexQ_FNqMGvvhQlaLfIA',
+        googleCalendarId: 'japanese__ja@holiday.calendar.google.com',
+        display: 'background',
+      }
     ],
     plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin,  ]
   });
