@@ -76,6 +76,7 @@ gem "devise-i18n-views"
 group :production do
 end
 
-# gem 'dotenv-rails'
 
 gem 'unicorn', '5.4.1'
+
+gem 'rename'
