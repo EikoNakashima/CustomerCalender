@@ -6,13 +6,14 @@ describe EventsController, type: :controller do
   end
 
   describe 'GET #index' do
-    it "renders the :index template" do
+    it "redirects the page to /users/sign_in" do
       get :index
-      expect(response).to render_template :index
+      expect(response).to redirect_to "/users/sign_in"
+      # render_template :index
     end
-    it "returns a 200 response" do
+    it "returns a 302 response" do
       get :index
-      expect(response).to have_http_status "200"
+      expect(response).to have_http_status "302"
     end
   end
 
