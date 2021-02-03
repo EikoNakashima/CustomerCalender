@@ -55,7 +55,7 @@ document.addEventListener('turbolinks:load', function() {
         googleCalendarId: 'japanese__ja@holiday.calendar.google.com',
         className: 'Holiday',
         display: 'background',
-        color: 'red',
+        color: 'rgb(252, 190, 190)',
       }
     ],
     
