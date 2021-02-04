@@ -6,7 +6,7 @@
 「営業マン向けのスケジュール管理＆顧客管理アプリ」です。
 
 
-<img width="1124" alt="トップページ　new" src="https://user-images.githubusercontent.com/68436861/104837380-6df6f680-58f7-11eb-9db7-1ddea0feb71d.png">
+<img width="1208" alt="トップ画面　new" src="https://user-images.githubusercontent.com/68436861/106907243-63cf5780-6741-11eb-823e-76021ca13ce8.png">
 
 
 
