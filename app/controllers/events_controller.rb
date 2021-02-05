@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
-    @events = Event.all
-    @customer = Customer.all
+    @events = Event.includes(:user)
+    @customer = Customer.includes(:user).order("created_at DESC")
   end
 
   def new

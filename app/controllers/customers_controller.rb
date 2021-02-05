@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
 
   
   def index
-    @customer = Customer.all
+    @customer = Customer.includes(:user)
   end
 
   def new
