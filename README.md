@@ -31,7 +31,7 @@ https://customer-calender.com/
 
 # 使用技術・言語
 
-- フロントエンド(javascript, jQuery, fullcalender v5, Haml/scss)
+- フロントエンド(javascript, jQuery, fullcalendar v5, Haml/scss)
 - バックエンド(Ruby on Rails6.0)
 - テスト(RSpec, FactoryBot,faker)
 - Web サーバ(nginx)
@@ -54,7 +54,7 @@ https://customer-calender.com/
 
 ### スケジュール登録
 
-- スケジュール一覧表示(fullcalender)
+- スケジュール一覧表示(fullcalendar)
 - スケジュール新規登録(顧客情報紐付け可能)
 - スケジュール詳細表示
 - スケジュール編集、削除
