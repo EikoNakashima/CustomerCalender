@@ -33,7 +33,7 @@ https://customer-calender.com/
 
 - フロントエンド(javascript, jQuery, fullcalendar v5, Haml/scss)
 - バックエンド(Ruby on Rails6.0)
-- テスト(RSpec, FactoryBot,faker)
+- テスト(RSpec)
 - Web サーバ(nginx)
 - アプリケーションサーバ(unicorn)
 - データベース(MySQL)
